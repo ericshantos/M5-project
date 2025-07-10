@@ -1,0 +1,29 @@
+name: Lint and Prettier Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-and-format:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Rodar ESLint
+        run: npx eslint . --ext .js,.ts,.jsx,.tsx
+
+      - name: Rodar Prettier (modo verificação)
+        run: npx prettier --check .
