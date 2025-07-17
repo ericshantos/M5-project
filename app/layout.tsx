@@ -1,33 +1,23 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+// app/layout.tsx
 import "./globals.css";
+import Sidebar from "@/app/components/templates/Sidebar"; // Corrected import path
+import Navbar from "@/app/components/templates/Navbar";   // Corrected import path
+import { ReactNode } from "react";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export const metadata: Metadata = {
-  title: "Final project M5",
-  description: "Working...",
+export const metadata = {
+  title: "Painel Administrativo",
+  description: "Sistema de gestão de alimentos e doações",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-BR">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className="flex">
+        <Sidebar />
+        <main className="ml-64 w-full">
+          <Navbar />
+          <div className="p-6">{children}</div>
+        </main>
       </body>
     </html>
   );
