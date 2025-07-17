@@ -1,48 +1,9 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700&display=swap');
-
+/* Estilos customizados podem ser adicionados aqui */
 body {
-  @apply bg-background-light text-text-DEFAULT font-sans transition-colors duration-300;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Dark mode styles */
-body.dark {
-  @apply bg-background-darker text-text-dark;
-}
-
-input, select, textarea {
-  @apply border border-gray-300 p-2 rounded w-full bg-white text-text-DEFAULT;
-}
-
-body.dark input, body.dark select, body.dark textarea {
-  @apply border-gray-600 bg-gray-800 text-text-dark;
-}
-
-button {
-  @apply bg-primary-DEFAULT text-white py-2 px-4 rounded hover:bg-primary-dark transition-colors duration-200;
-}
-
-a {
-  @apply text-primary-DEFAULT hover:underline transition-colors duration-200;
-}
-
-.input {
-  @apply border border-gray-300 p-2 rounded w-full bg-white text-text-DEFAULT;
-}
-
-.btn {
-  @apply bg-primary-DEFAULT text-white px-4 py-2 rounded hover:bg-primary-dark transition-colors duration-200;
-}
-
-/* Dark mode specific overrides for custom classes */
-body.dark .input {
-  @apply border-gray-600 bg-gray-800 text-text-dark;
-}
-
-body.dark .btn {
-  @apply bg-primary-dark text-white hover:bg-primary-darker;
-}
