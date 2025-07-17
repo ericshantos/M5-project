@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { deletarReceptor, listarReceptores } from "@/app/services/receptor";
 import { Receptor } from "@/app/types/receptor";
 import Link from "next/link";
-import "@/globals.css";
+import "../../../../../app/globals.css";
 export default function ListaReceptores() {
   const [receptores, setReceptores] = useState<Receptor[]>([]);
 
